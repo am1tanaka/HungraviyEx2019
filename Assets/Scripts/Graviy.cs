@@ -213,8 +213,6 @@ namespace HungraviyEx2019 {
 
         private void OnCollisionStay2D(Collision2D collision)
         {
-            if (mutekiTime >= 0) return;
-
             if (collision.collider.CompareTag("Item"))
             {
                 if (eatingCount >= EatingMax)
@@ -230,8 +228,12 @@ namespace HungraviyEx2019 {
                 eatingCount++;
 
                 StartEat();
+                return;
             }
-            else if (collision.collider.CompareTag("Enemy"))
+
+            if (mutekiTime >= 0) return;
+
+            if (collision.collider.CompareTag("Enemy"))
             {
                 Miss(collision.collider);
             }

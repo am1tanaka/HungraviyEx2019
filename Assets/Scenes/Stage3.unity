@@ -333,7 +333,7 @@ PrefabInstance:
     - target: {fileID: 6139822447926980982, guid: 0825a92cf9ce96845bba14ae93036876,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6139822447926980982, guid: 0825a92cf9ce96845bba14ae93036876,
         type: 3}
@@ -383,12 +383,12 @@ PrefabInstance:
     - target: {fileID: 8609839053098766241, guid: 0825a92cf9ce96845bba14ae93036876,
         type: 3}
       propertyPath: cameraTop
-      value: 42
+      value: 113
       objectReference: {fileID: 0}
     - target: {fileID: 8609839053098766241, guid: 0825a92cf9ce96845bba14ae93036876,
         type: 3}
       propertyPath: cameraBottom
-      value: -13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5468106344731987674, guid: 0825a92cf9ce96845bba14ae93036876,
         type: 3}

@@ -113,14 +113,6 @@ namespace HungraviyEx2019
             IsSpawn = (mouseClicked && (Graviy.Energy > 0));
             anim.SetBool("Spawn", IsSpawn);
 
-            // 発生アニメでなければ移動なし
-            if (!animSpawn)
-            {
-                lastSpawned = false;
-                StopSe();
-                return transform.position; 
-            }
-
             // 動かす
             if (myCamera == null)
             {
@@ -136,6 +128,14 @@ namespace HungraviyEx2019
                 transform.position = target;
                 rb.velocity = Vector3.zero;
                 lastSpawned = true;
+                return transform.position;
+            }
+
+            // 発生アニメでなければ移動なし
+            if (!animSpawn)
+            {
+                lastSpawned = false;
+                StopSe();
                 return transform.position;
             }
 
