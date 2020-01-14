@@ -14,8 +14,22 @@ namespace HungraviyEx2019
 
         static BGScroller bgScroller = null;
 
+        const int DefaultWidth = 1920;
+        const int DefaultHeight = 1080;
+        const float DefaultAspect = (float)DefaultWidth / (float)DefaultHeight;
+
         void Start()
         {
+            Camera cam = GetComponent<Camera>();
+            if (cam.aspect < DefaultAspect)
+            {
+                // デフォルトより縦長の時、横幅を画面に入れるようにスクリーンサイズを調整する
+                float h = cam.orthographicSize;
+                float w = h * DefaultAspect;
+                float newOrtho = w / cam.aspect;
+                cam.orthographicSize = newOrtho;
+            }
+
             offset = transform.position - Graviy.instance.transform.position;
             bgScroller = GetComponent<BGScroller>();
         }
